@@ -15,7 +15,7 @@ my_fruit_list=p.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/
 # streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index)) --- this takes the column1 as indes which is a number, this doesn't make any sense. have to provide the choice to choose the fruits by names. It is required to change the index to 'Fruit'. 
 my_fruit_list=my_fruit_list.set_index('Fruit')
 # Display the table with pick list option 
-streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
+#streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),['Avocado','Strawberries'])
 
 # We want to filter the table data based on the fruits a customer will choose, so we'll pre-populate the list to set an example for the customer. 
 #let's put a pick list so the customer can pick the fruit what they want
