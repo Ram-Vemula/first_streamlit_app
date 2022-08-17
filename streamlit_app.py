@@ -20,7 +20,7 @@ streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),['Avocado','
 # We want to filter the table data based on the fruits a customer will choose, so we'll pre-populate the list to set an example for the customer. 
 #let's put a pick list so the customer can pick the fruit what they want
 
-streamlit.dataframe(my_fruit_list)
+#streamlit.dataframe(my_fruit_list)
 
 # we just have to make the table below the picker a bit smarter so it's doesn't load all the fruits, just the ones shown in the pick list
 
