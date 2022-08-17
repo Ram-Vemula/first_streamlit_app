@@ -18,7 +18,7 @@ my_fruit_list=p.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/
 
 my_fruit_list=my_fruit_list.set_index('Fruit')
 
-streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index))
+streamlit.multiselect("Pick some fruits:",list(my_fruit_list.index),['Avacado','Strawberries'])
 #streamlit.dataframe(my_fruit_list)
 # We want to filter the table data based on the fruits a customer will choose, so we'll pre-populate the list to set an example for the customer. 
 #let's put a pick list so the customer can pick the fruit what they want
