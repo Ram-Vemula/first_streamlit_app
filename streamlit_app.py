@@ -30,7 +30,7 @@ fruits_to_show=my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 streamlit.header("Fruityvice Fruit Advice!")
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/Watermelon")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"Kiwi")
 #streamlit.text(fruityvice_response.json())   # this writes the data to screen 
 #below code is to Normalize the semi structured json data into a flat file
 fruityvice_normalized = p.json_normalize(fruityvice_response.json())
