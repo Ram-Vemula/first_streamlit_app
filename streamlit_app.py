@@ -34,4 +34,6 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/Watermelon"
 streamlit.text(fruityvice_response.json())   # this writes the data to screen 
 #below code is to Normalize the semi structured json data into a flat file
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-streamlit.dataframe(fruityvice_normalized)   # this is to display a dataframe as a interactive table
+# this is to display a dataframe as a interactive table
+streamlit.dataframe(fruityvice_normalized)   
+
