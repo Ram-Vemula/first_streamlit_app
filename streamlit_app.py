@@ -50,7 +50,7 @@ streamlit.text(my_data_row)
 
 import streamlit as st
 
-streamlit.session_state['answer'] = ''!
+streamlit.session_state['answer'] = ''
 
 streamlit.write(st.session_state)
 
