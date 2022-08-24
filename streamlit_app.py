@@ -38,6 +38,9 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_ch
 fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 # this is to display a dataframe as a interactive table
 streamlit.dataframe(fruityvice_normalized)   
+
+-r https://raw.githubusercontent.com/snowflakedb/snowflake-connector-python/v2.7.9/tested_requirements/requirements_39.reqs
+    
 import snowflake.connector as sfc
 
 
