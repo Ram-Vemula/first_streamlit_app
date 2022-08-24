@@ -54,7 +54,7 @@ streamlit.header("The fruit load list containts:")
 streamlit.dataframe(my_data_rows)
 
 #adding a text entry box 
-fruit_choice2 = streamlit.text_input('What fruit would you like to add','Kiwi')
+fruit_choice2 = streamlit.text_input('What fruit would you like to add','Jackfruit')
 
 
 
