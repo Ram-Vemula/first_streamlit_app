@@ -46,3 +46,4 @@ my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
 
+File "/home/appuser/venv/lib/python3.7/site-packages/streamlit/state/session_state.py"
