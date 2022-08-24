@@ -39,21 +39,20 @@ fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 # this is to display a dataframe as a interactive table
 streamlit.dataframe(fruityvice_normalized)   
 
--r https://raw.githubusercontent.com/snowflakedb/snowflake-connector-python/v2.7.9/tested_requirements/requirements_39.reqs
-    
+   
 import snowflake.connector as sfc
 
 
-#streamlit.session_state['answer'] = ''
+streamlit.session_state['answer'] = ''
 
-#streamlit.write(st.session_state)
+streamlit.write(st.session_state)
 
-#realans = ['', 'abc', 'edf']
+realans = ['', 'abc', 'edf']
 
-#if  streamlit.session_state['answer'] in realans:
-    #answerStat = "correct"
-#elif streamlit.session_state['answer'] not in realans:
-    #answerStat = "incorrect"
+if  streamlit.session_state['answer'] in realans:
+    answerStat = "correct"
+elif streamlit.session_state['answer'] not in realans:
+    answerStat = "incorrect"
 
-#streamlit.write(st.session_state)
-#streamlit.write(answerState)
+streamlit.write(st.session_state)
+streamlit.write(answerState)
