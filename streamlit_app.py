@@ -43,16 +43,5 @@ streamlit.dataframe(fruityvice_normalized)
 import snowflake.connector as sfc
 
 
-streamlit.session_state['answer'] = ''
-
-streamlit.write(st.session_state)
-
-realans = ['', 'abc', 'edf']
-
-if  streamlit.session_state['answer'] in realans:
-    answerStat = "correct"
-elif streamlit.session_state['answer'] not in realans:
-    answerStat = "incorrect"
-
-streamlit.write(st.session_state)
-streamlit.write(answerState)
+# streamlit.session_state['answer'] = '' # streamlit.write(st.session_state) realans = ['', 'abc', 'edf'] if  streamlit.session_state['answer'] in realans:      answerStat = "correct"
+# elif streamlit.session_state['answer'] not in realans:     answerStat = "incorrect"    streamlit.write(st.session_state)    streamlit.write(answerState)
