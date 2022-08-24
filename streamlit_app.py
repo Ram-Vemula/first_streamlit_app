@@ -45,5 +45,10 @@ my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
 streamlit.text("Hello from Snowflake:")
 streamlit.text(my_data_row)
+st.session_state['answer'] = ''
 
-File "/home/appuser/venv/lib/python3.7/site-packages/streamlit/state/session_state.py"
+ if  st.session_state['answer'] in realans:
+        answerStat = "correct"
+    elif st.session_state['answer'] not in realans:
+        answerStat = "incorrect"
+
