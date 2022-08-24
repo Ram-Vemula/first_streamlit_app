@@ -38,7 +38,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_ch
 fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 # this is to display a dataframe as a interactive table
 streamlit.dataframe(fruityvice_normalized)   
-import snowflake.connector as sfc
+import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
