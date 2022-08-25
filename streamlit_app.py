@@ -82,13 +82,24 @@ try:
       streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()  
-    
+
+#allow the end user to add a fruit to the list # through a funtion
+def insert_row_snowflake(new_fruit):
+  with my_cux.cursor() as my_cur:
+       my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+       return "Thanks for adding " + new_fruit
+fruit_choice2 = streamlit.text_input('What fruit would you like to add?')
+if streamlit.button('Add a fruit to the list'):
+    my_cnx = sfc.connect(**streamlit.secrets["snowflake"])
+    back_from_function = insert_row_snowflake(fruit_choice2)
+    streamlit.text(back_from_function)
 
 # import snowflake.connector as sfc
 streamlit.stop()
-my_cnx = sfc.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-
+#my_cnx = sfc.connect(**streamlit.secrets["snowflake"])
+#my_cur = my_cnx.cursor()
+  
+  
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 
 my_cur.execute("SELECT * from fruit_load_list")
