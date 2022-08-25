@@ -82,10 +82,10 @@ try:
       streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()  
-    streamlit.stop()
+    
 
 # import snowflake.connector as sfc
-
+streamlit.stop()
 my_cnx = sfc.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 
