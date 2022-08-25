@@ -82,13 +82,18 @@ try:
       streamlit.dataframe(back_from_function)
 except URLError as e:
     streamlit.error()  
+
 #adding new button to load the fruit name
+streamlit.header("The fruit load list containts:")
+def get_fruit_load_list():
+    with my_cnx.cursor() as my_cur:
+         my_cur.execute("SELECT * from fruit_load_list")
+         return my_cur.fetchall()    
 if streamlit.button('Get Fruit List'):
    my_cnx = sfc.connect(**streamlit.secrets["snowflake"])
-   my_data_rows = my_fruit_list()
+   my_data_rows = get_fruit_load_list()
    my_cnx.close()
    streamlit.dataframe(my_data_rows)
-
   
 #allow the end user to add a fruit to the list # through a funtion
 def insert_row_snowflake(new_fruit):
