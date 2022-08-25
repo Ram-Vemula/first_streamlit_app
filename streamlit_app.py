@@ -1,4 +1,9 @@
 import streamlit
+import pandas as p
+import requests
+import snowflake.connector as sfc
+from urllib.error import URLError
+
 streamlit.title('My Parents for New Healthy Diner')
 streamlit.header('Breakfast Favourites')
 streamlit.text('Omega 3 & Blueberry Oatmeal')
@@ -6,8 +11,9 @@ streamlit.text('Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('Avacado Toast')
 streamlit.header('🍌 Build Your Own Fruit Smoothie')
-#importing PANDAS 
-import pandas as p
+
+#import pandas as p
+
 my_fruit_list=p.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 #streamlit.dataframe(my_fruit_list)
 #have to create User Interactive widget so that user can pick the fruits they want in their smoothies
@@ -33,7 +39,9 @@ streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 #displaying the user choice 
 streamlit.write('The user entered ', fruit_choice)
-import requests
+
+# import requests
+
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+ fruit_choice)
 #streamlit.text(fruityvice_response.json())   # this writes the data to screen 
 #below code is to Normalize the semi structured json data into a flat file
@@ -41,7 +49,9 @@ fruityvice_normalized = p.json_normalize(fruityvice_response.json())
 # this is to display a dataframe as a interactive table
 streamlit.dataframe(fruityvice_normalized)   
 streamlit.stop()
-import snowflake.connector as sfc
+
+# import snowflake.connector as sfc
+
 my_cnx = sfc.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
